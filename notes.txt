@@ -1,0 +1,18 @@
+1. Ran
+
+2. Results for the extraLargeArray
+insert 769.812458 ms
+append 1.876875 ms
+
+3. 	                tinyArray	smallArray	mediumArray	largeArray	extraLargeArray
+doublerAppend (ms)	0.06225 	0.0835	    0.13375	    0.57479	        1.81246
+doublerInsert (ms)	0.023292	0.036208	0.18996	    8.67992	        769.81249
+
+4. The doublerInsert method is actually faster than the doublerAppend method until the mediumArray trial when Append becomes slightly
+faster. But one we get into large and extra large arrays then the Insert times grow exponetially O(n) while the Append times grows
+linearly O(1). This means the Append scales much better than Insert since as the array grows ever larger the Append time will increase
+at a slower rate than Insert.
+
+5. The reason Insert becomes so much slower is because as the array grows ever larger, it is required to edit every index of that array
+inorder to make room for the new variables at the begining of the set while Append merely has to tack them at the end with no need
+to alter all the indexes that are already there. 
